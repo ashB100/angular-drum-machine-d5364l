@@ -1,0 +1,32 @@
+<header>
+    <h2>{{ currentBank.description }}</h2>
+</header>
+
+<section class="drum-pad-container">
+		<ul class="drum-pad">
+      <li *ngFor="let key of currentBankMap" [id]="key.letter" class="drum-key icon" [class.active]="currentKey.id === key.id && playing"
+				(click)="play(key)">
+				{{ key.letter }}
+			</li>
+		</ul>
+    	<p class="key-description">{{ currentKey.id }}</p>
+</section>
+
+
+<section id="audio">
+    <audio (ended)="playing = !playing" #audioRef></audio>
+</section>
+
+<section id="bank-selection">
+    <p>Select the band:
+      <i class="fas fa-drum"></i>
+    </p>
+		<form [formGroup]="form">
+			<div *ngFor="let bank of banks">
+				<label [for]="bank.id">
+      <input type="radio" [id]="bank.id" [value]="bank.id" formControlName="bankControl">
+      {{ bank.description }}
+    </label>
+			</div>
+		</form>
+</section>
