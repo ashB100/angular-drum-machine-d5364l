@@ -29,9 +29,9 @@ h2 {
   background-color: black;
   border-radius: 10px;
   color: #fff;
-  box-shadow: 0 2px 0 3px #FC354C;
+  box-shadow: 0 2px 0 3px var(--primary-color);
   transition: all 20ms ease;
-
+  user-select: none;
 }
 
 .icon::before {
@@ -47,9 +47,10 @@ h2 {
   font-weight: 600; 
   content: "\f001";
   position: absolute;
-  top: -140%;
+  top: -120%;
   right: 0;
   z-index: 2;
+  font-size: 0.8em;
   color: #00ffdd;
 }
 .drum-key.active::after {
@@ -58,19 +59,19 @@ h2 {
   font-weight: 600; 
   content: "\f001";
   position: absolute;
-  top: -60%;
-  left: -5px;
+  top: -50%;
+  left: 0px;
   z-index: 3;
-  font-size: 0.8em;
+  font-size: 0.5em;
   color: #00ffdd;
 }
 
 .drum-key:hover {
-  box-shadow: 0 2px 0 3px #00ffdd;
+  box-shadow: 0 2px 0 3px var(--accent-color-dark);
 }
 
-li.active {
-    box-shadow: 0 2px 0 1px #00ffdd;
+.drum-key.active {
+  box-shadow: none;
   transform: translateY(2px);
 }
 
@@ -83,11 +84,10 @@ li.active {
   height: 285px;
   border-radius: 50%;
   box-shadow: 
-  0px 0px 1px 5px #FC354C,
-  0px 0px 1px 10px white,
-  0px 0px 1px 20px black;
-  ;
-  border: 5px double black;
+  0px 0px 1px 5px var(--accent-color-light),
+  0px 0px 5px 10px white,
+  0px 0px 20px 12px black;
+  border: 5px groove var(--primary-color);
   background-color: blanchedalmond;
   margin-bottom: 2em;
 }
